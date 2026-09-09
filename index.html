@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="Ugjzrg3udQKKHuXkLtzMV7">
+<head data-page-node-id="byQY8bu7Ol36Dflpg8wBep">
+<meta charset="UTF-8" data-page-node-id="hp1BbNR7ysWUcjsAKGOy1B">
+<meta name="viewport" content="width=device-width,initial-scale=1" data-page-node-id="nGeTxSTgjqiL5ESkErHTEE">
+<title>每日必看 · 主人专属面板</title>
+<meta name="theme-color" content="#12805c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="每日必看">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="assets/icon-192.png">
+<link rel="stylesheet" href="assets/style.css" data-page-node-id="mmqCKDpcoMkHpdL4hna88q">
+<script src="assets/lock.js"></script>
+<script src="assets/gate.js"></script>
+</head>
+<body data-page-node-id="mZ2lpTxSr3MrhX7Fi1Nbl7">
+
+<div class="topbar" data-page-node-id="CDpds956AefLMJ9STBrVNz">
+  <div class="topbar-inner" data-page-node-id="i5i7HURlUTYpbIqMrTJ3lb">
+    <div class="brand" data-page-node-id="vwzjqwm2VR1notGAWnsnOR">
+      <h1 data-page-node-id="n0XFdbM34E4vYhjTdLzI6X">每日必看</h1>
+      <span class="sub" id="brandSub" data-page-node-id="dU5PjfJ0ELaW6jyt8OpJdF">主人专属晨间面板</span>
+    </div>
+    <div class="datenav" data-page-node-id="U6kLCHzhIG4KordICcqNP9">
+      <button id="btnPrev" title="前一天" data-page-node-id="eKTx9b8qJBHfoCI5XsR5oO">‹</button>
+      <select class="datesel" id="dateSel" data-page-node-id="vLDZNOMZ38Dw3L34ylUmzb"></select>
+      <button id="btnNext" title="后一天" data-page-node-id="Gw6YlyMZSZRpiu77RXACWT">›</button>
+      <button id="btnToday" class="toolbtn" data-page-node-id="gZLvEhE6TzDehSHqzBTBYD">今天</button>
+      <button id="btnRefresh" class="toolbtn" title="检查服务器是否有新的内容" data-page-node-id="rf9x2Qb7Lm4Nd1TpKv6YsA">🔄 更新</button>
+    </div>
+    <button id="btnEdit" class="toolbtn" data-page-node-id="7kqDj4DaNKcRRO7hf9o55n">✎ 编辑</button>
+    <button id="btnReset" class="toolbtn" title="放弃本机手动修改，恢复当日原始内容" data-page-node-id="TkwvviLJ7FJqA33mrKbHHN">↺ 复原</button>
+    <button id="btnPrint" class="toolbtn" data-page-node-id="HpxDqrbOQSCk22RJHuBuNT">🖨 打印/存 PDF</button>
+  </div>
+</div>
+
+<div class="wrap" data-page-node-id="zu2Cb3NdqGGxXuGvN67wtp">
+  <div class="hero" data-page-node-id="133wYA0q9AbbhtUTE5O0s9">
+    <div data-page-node-id="yQisjrkcZld1OkMwpx4pOV">
+      <div class="hero-date" id="heroDate" data-page-node-id="z9FDw7UevCLLztJDZpup9r">—<span class="hero-week" id="heroWeek" data-page-node-id="2xmJoFp9sXovbYO4ffGQv5"></span></div>
+      <div class="hero-line ed" data-k="greeting" data-ph="（点击编辑今日寄语）" data-page-node-id="FcUOn0cjSmxeFuvEWtvmNg"></div>
+    </div>
+    <div class="hero-meta" id="heroMeta" data-page-node-id="NxHFroOumYXDKc3I03zO9H"></div>
+    <div class="upd-status" id="updStatus" data-page-node-id="u7Rk3Mn9Qp2LbXc4Vd8Zt5"></div>
+  </div>
+
+  <div class="grid" id="grid" data-page-node-id="Yz8JposGz7aVsnJEtmoPMH"></div>
+</div>
+
+<div class="footer" data-page-node-id="OS3lUYVwyodrtzFCedR2Q1">
+  <div data-page-node-id="SfMueXEKECGw6snJDfanZE">数据目录：<code id="footPath" data-page-node-id="zj6nYfKoY3Uz6ysFs88pmX"></code> ｜ 每天由定时任务自动写入新一期内容；本机手动修改仅保存在当前浏览器。</div>
+  <div data-page-node-id="qDVeAzw3RXEEjZFJvZhoja">🐾 咪的仆人出品</div>
+</div>
+
+<div class="toast" id="toast" data-page-node-id="M0r6sjbYgofSvHu2fLOAyj"></div>
+
+<!-- 注意：这里刻意用静态标签而非动态注入。
+     document.write 会被 Chrome 在弱网下拦截导致整页空白；
+     新鲜度由 sw.js（强制回源）+ app.js 的 checkUpdate（带时间戳探测）双层保证。 -->
+<script>window.__ASSET_VER__ = Date.now();</script>
+<script src="data/days.js"></script>
+<script src="assets/pool_book.js"></script>
+<script src="assets/pool_why.js"></script>
+<script src="assets/pool_nutrition.js"></script>
+<script src="assets/pool_quote.js"></script>
+<script src="assets/pool_health.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

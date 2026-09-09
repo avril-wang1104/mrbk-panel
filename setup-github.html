@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-title" content="GitHub开通">
+<title>给咪的仆人开通 GitHub 钥匙 · 全程 5 分钟</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1b1f24;--ink2:#4b5563;--muted:#8a94a2;--line:#e6e9ee;--accent:#12805c;--accent-soft:#e6f4ef;--warn:#b45309;--warn-bg:#fff7ed;}
+*{box-sizing:border-box;-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.75;font-size:16px;padding-bottom:40px;}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px;}
+.hero{background:linear-gradient(135deg,#fff 0%,#fdfaf6 100%);border:1px solid var(--line);
+  border-radius:16px;padding:20px 18px;box-shadow:0 2px 10px rgba(16,24,40,.05);}
+.hero h1{margin:0 0 6px;font-size:23px;letter-spacing:.4px;}
+.hero p{margin:0;color:var(--ink2);font-size:15px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 6px;margin-top:16px;
+  box-shadow:0 1px 4px rgba(16,24,40,.04);}
+.card h2{margin:0 0 4px;font-size:19px;display:flex;align-items:center;gap:8px;}
+.step{display:flex;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line);}
+.step:last-child{border-bottom:none;}
+.sn{flex:0 0 28px;height:28px;border-radius:9px;background:var(--accent-soft);color:var(--accent);
+  font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;}
+.tx{flex:1;min-width:0;}
+.tx b{color:var(--ink);}
+.tx .mut{color:var(--muted);font-size:14px;}
+code{background:#f1f3f6;border:1px solid var(--line);border-radius:7px;padding:2px 6px;
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;word-break:break-all;}
+.warnbox{background:var(--warn-bg);border:1px solid #fed7aa;border-radius:12px;padding:12px 14px;margin:12px 0 0;}
+.warnbox b{color:var(--warn);}
+.notebox{background:var(--accent-soft);border:1px solid #b8e0d0;border-radius:12px;padding:12px 14px;margin:12px 0 0;}
+ol{margin:6px 0 0;padding-left:20px;}
+ol li{margin:5px 0;}
+.bigbtn{display:block;background:var(--accent);color:#fff;text-align:center;text-decoration:none;
+  border-radius:12px;padding:13px 16px;font-size:17px;font-weight:600;margin:10px 0 4px;}
+.small{font-size:13px;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <h1>给咪的仆人一把 GitHub 钥匙 🔑</h1>
+  <p>全程约 5 分钟，做完一次，面板从此永久在线、永不休眠。</p>
+  <div class="notebox">
+    <b>一句话概括：</b>注册个账号 → 生成一串密码发给我 → 剩下的我全包。<br>
+    您可以全程在手机上做，不用开电脑。
+  </div>
+</div>
+
+<div class="card">
+  <h2>① 注册 GitHub 账号</h2>
+  <div class="step"><div class="sn">1</div><div class="tx">
+    手机浏览器（Safari / Chrome）打开：<br>
+    <code>github.com/signup</code>
+  </div></div>
+  <div class="step"><div class="sn">2</div><div class="tx">
+    填<b>邮箱</b> → 密码 → 用户名（比如 <code>wangjingli888</code>，英文数字即可）→ 完成邮箱验证码
+  </div></div>
+  <div class="step"><div class="sn">3</div><div class="tx">
+    中间会问"团队/个人"、用途选择 —— 一律选<b>个人</b>、<b>Just me</b>、跳过问卷即可
+  </div></div>
+  <div class="warnbox">
+    <b>⚠ 注册完请先登录着别退出</b>，下一步直接在同一浏览器继续。
+  </div>
+</div>
+
+<div class="card">
+  <h2>② 生成 Token（就是那串钥匙）</h2>
+  <div class="step"><div class="sn">1</div><div class="tx">
+    在同一个浏览器打开这个地址（已登录的话会直达）：<br>
+    <code>github.com/settings/tokens/new</code>
+  </div></div>
+  <div class="step"><div class="sn">2</div><div class="tx">
+    <b>Note（备注）</b>里随便填，比如 <code>每日必看</code>
+  </div></div>
+  <div class="step"><div class="sn">3</div><div class="tx">
+    <b>Expiration（有效期）</b>选 <code>No expiration</code>（永不过期，免得以后还得重来）
+  </div></div>
+  <div class="step"><div class="sn">4</div><div class="tx">
+    <b>Select scopes（权限）</b>：只勾选 <code>repo</code> 这一组
+    <div class="mut">勾它会自动带上下面 8 个子项，不用管别的</div>
+  </div></div>
+  <div class="step"><div class="sn">5</div><div class="tx">
+    滚到最底下点绿色按钮 <b>Generate token</b>
+  </div></div>
+  <div class="step"><div class="sn">6</div><div class="tx">
+    生成的密码形如 <code>ghp_xxxx一串很长的字符xxxx</code>，<b>长按复制</b>它，<b>直接发到咱们的对话里</b>
+    <div class="mut">这一串只在生成页露一次，关掉就看不见了。发完记得别把浏览器里那页留在前台。</div>
+  </div></div>
+  <div class="warnbox">
+    <b>⚠ 这串密码只能你我能看见</b>，请不要发到群里或朋友圈。我在用它部署完成后，您可以随时在 GitHub 上删掉它再重建；它没有付款、删文件之外的权限。
+  </div>
+</div>
+
+<div class="card">
+  <h2>③ 发给我之后会发生什么</h2>
+  <ol>
+    <li>我自动创建仓库、把面板推上去、开启 Pages —— 全程 1 分钟内</li>
+    <li>给您一个新的<b>永久网址</b>，形如 <code>用户名.github.io/mrbk-panel</code></li>
+    <li>我把这个网址写进每天的自动更新任务，从<b>明天早上 8 点</b>起走这条稳定通道</li>
+    <li>手机桌面图标需要<b>删掉重加一次</b>（新网址），做完后不再需要我每天踹醒沙箱</li>
+  </ol>
+  <div class="notebox">
+    <b>关于隐私</b>：GitHub Pages 免费版要求仓库公开，所以网址是不可搜索的长地址，但理论上拿到链接的人能看到内容。
+    面板里有健康数据，如果您介意，我可以在部署后给页面加一道<b>密码门禁</b>（打开要输入四位数字），这样外人打开只看到输入框。
+  </div>
+</div>
+
+<div class="card">
+  <h2>拿不到 / 不想弄？</h2>
+  <div class="tx">
+    那就维持现在的沙箱通道。每天早晨 8 点任务会自动把它叫醒，您起来打开就是新内容；白天遇上休眠，手机会显示缓存里的上一版（不会是错误页）。
+    想彻底解决随时再来找我。
+  </div>
+</div>
+
+<p class="small" style="text-align:center;margin-top:22px;color:#a3abb6;">咪的仆人 · 2026-09-09</p>
+
+</div>
+</body>
+</html>

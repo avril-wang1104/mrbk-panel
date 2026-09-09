@@ -1,0 +1,14 @@
+{
+  "name": "每日必看 · 主人专属面板",
+  "short_name": "每日必看",
+  "description": "每日早报、健康日报、营养知识、好书快读，一屏看完",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f5f2",
+  "theme_color": "#12805c",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
