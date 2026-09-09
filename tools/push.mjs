@@ -25,6 +25,16 @@ function run(cmd, opts = {}) {
   return execSync(cmd, { cwd: ROOT, encoding: "utf-8", stdio: "pipe", ...opts }).trim();
 }
 
+const remote = `https://x-access-token:${TOKEN}@github.com/${REPO}.git`;
+
+// 0) 先拉取云端可能新增的内容（如云端会话写入的 garmin/<日期>.md）
+try {
+  run(`git pull --rebase --autostash ${remote} main`);
+  console.log("已同步云端最新内容");
+} catch (e) {
+  console.log("⚠ pull 未成功（可能无远端变更或网络问题），继续本地提交");
+}
+
 // 1) 提交
 run("git add -A");
 const status = run("git status --porcelain");
@@ -37,7 +47,6 @@ if (status) {
 }
 
 // 2) 推送（token 仅在本行使用，不写入 .git/config）
-const remote = `https://x-access-token:${TOKEN}@github.com/${REPO}.git`;
 run(`git push ${remote} main --force`);
 console.log("推送完成 →", URL_BASE);
 
