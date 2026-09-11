@@ -285,6 +285,46 @@ a:hover{text-decoration:underline;}
   font-size:13.5px;color:#8a4b34;border-left:3px solid var(--warm);
 }
 
+/* ---- 今日星盘 ---- */
+.astro-top{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+.astro-chart{flex:0 0 240px;max-width:240px;}
+.astro-svg{width:100%;height:auto;display:block;}
+.astro-chart-cap{font-size:11.5px;color:var(--muted);line-height:1.6;margin-top:6px;}
+.astro-facts{flex:1 1 380px;min-width:280px;}
+.astro-pt{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px;}
+.astro-pt .ap{
+  font-size:12.5px;color:var(--ink2);background:#fbf9f5;border:1px solid var(--line);
+  border-radius:9px;padding:3px 10px;
+}
+.astro-pt .ap i{font-style:normal;color:var(--purple);margin-right:4px;}
+.astro-pt .rx{color:#c0392b;font-size:11px;margin-left:4px;}
+.astro-ln{font-size:13.8px;color:var(--ink2);line-height:1.85;}
+.astro-ln b{color:var(--ink);font-weight:700;margin-right:4px;}
+.sign-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:12px;}
+.sign-card{
+  border:1px solid var(--line);border-radius:13px;padding:12px 13px;background:#fdfcf9;
+}
+.sign-card.favo{border-color:var(--purple);background:var(--purple-soft);}
+.sg-head{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;margin-bottom:7px;}
+.sg-g{font-size:17px;color:var(--purple);}
+.sg-n{font-size:15px;font-weight:700;}
+.sg-fav{
+  font-size:11px;color:#fff;background:var(--purple);border-radius:999px;padding:1px 8px;
+}
+.sg-r{font-size:11.5px;color:var(--muted);}
+.sg-star{margin-left:auto;font-size:12px;color:var(--gold);letter-spacing:1px;}
+.sg-l{font-size:13.2px;color:var(--ink2);line-height:1.75;margin-top:4px;}
+.sg-l b{color:var(--ink);font-weight:700;margin-right:6px;}
+.sg-lucky{
+  margin-top:8px;font-size:11.8px;color:var(--muted);border-top:1px dashed var(--line2);
+  padding-top:6px;
+}
+.astro-foot{font-size:11.8px;color:var(--muted);margin-top:12px;line-height:1.7;}
+@media(max-width:640px){
+  .astro-chart{flex:1 1 100%;max-width:220px;margin:0 auto;}
+  .sign-grid{grid-template-columns:1fr;}
+}
+
 /* ---- 编辑交互 ---- */
 .ed{border-radius:5px;transition:background .15s,box-shadow .15s;}
 body.editmode .ed{cursor:text;background:#fdfbf5;box-shadow:0 0 0 1px var(--line2) inset;}

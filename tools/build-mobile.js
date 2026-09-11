@@ -15,7 +15,8 @@ html = html.replace(/<link rel="stylesheet" href="assets\/style\.css"[^>]*>/, ()
 
 // 2) 内联静态脚本（池 + 逻辑 + 日期索引）
 const scripts = ["data/days.js", "assets/pool_book.js", "assets/pool_why.js",
-  "assets/pool_nutrition.js", "assets/pool_quote.js", "assets/pool_health.js", "assets/app.js"];
+  "assets/pool_nutrition.js", "assets/pool_quote.js", "assets/pool_health.js",
+  "assets/astro_data.js", "assets/astro.js", "assets/app.js"];
 
 let inline = "";
 for (const s of scripts) {

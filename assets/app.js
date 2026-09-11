@@ -327,6 +327,14 @@
     },
 
     {
+      id: "astro", cls: "col-12 c-purple", icon: "🔮", title: "今日星盘 · 十二星座",
+      render: function (d, D) {
+        if (window.__renderAstro) return window.__renderAstro(d);
+        return "<div class=\"empty\">星盘模块未加载（缺少 assets/astro.js）</div>";
+      }
+    },
+
+    {
       id: "health", cls: "col-12 c-green", icon: "🏃", title: "健康日报",
       auto: function (D) { return !((D.health || {}).metrics || []).length; },
       render: function (d, D) {
