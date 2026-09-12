@@ -308,6 +308,12 @@ a:hover{text-decoration:underline;}
   font-size:13.8px;color:#4a3a72;line-height:1.82;
 }
 .hs-ins-t{font-weight:700;color:#5b3fa8;margin-bottom:5px;}
+.house-cta{
+  display:block;margin-top:12px;padding:11px 14px;border-radius:12px;text-align:center;
+  background:linear-gradient(135deg,#7c5cd6 0%,#5b3fa8 100%);
+  color:#fff;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.3px;
+}
+.house-cta:active{opacity:.85;}
 
 /* ---- 好书快读 · 与日报同步版 ---- */
 .book-why{

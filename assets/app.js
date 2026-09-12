@@ -173,6 +173,8 @@
            "<div>" + esc(h.insurance) + "</div></div>";
     }
     if (h.bestline) o += "<div class=\"bestline\">“" + esc(h.bestline) + "”</div>";
+    o += "<a class=\"house-cta\" href=\"house-cheatsheet.html\" target=\"_blank\" rel=\"noopener\">" +
+         "打开「客户星盘速查表」→</a>";
     o += "<div class=\"src-note\">12 天走完十二宫，每天积累一块，读完整张盘。</div>";
     return o;
   }

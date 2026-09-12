@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>客户星盘速查表 · 十二宫 × 保险需求</title>
+<style>
+  :root{
+    --ink:#23201c; --ink2:#5c554c; --muted:#8a8279;
+    --line:#e6e1d8; --bg:#faf8f4; --card:#fff;
+    --pp:#5b3fa8; --pp-soft:#f3eefc; --pp-line:#ddd0f4;
+    --warn:#b4531f; --warn-soft:#fdf3ea;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;line-height:1.75;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:26px 16px 60px;}
+  .top{text-align:center;padding:14px 0 20px;border-bottom:2px solid var(--pp);margin-bottom:20px;}
+  .top h1{margin:0 0 6px;font-size:23px;letter-spacing:.5px;}
+  .top .sub{font-size:13px;color:var(--muted);}
+  .howto{
+    background:var(--pp-soft);border:1px solid var(--pp-line);border-radius:12px;
+    padding:14px 16px;margin-bottom:22px;font-size:13.8px;color:#4a3a72;
+  }
+  .howto b{color:var(--pp);}
+  .howto ol{margin:8px 0 0;padding-left:20px;}
+  .howto li{margin:4px 0;}
+  .hc{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:14px 16px;margin-bottom:14px;break-inside:avoid;page-break-inside:avoid;
+  }
+  .hc-hd{display:flex;align-items:center;gap:11px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--line);}
+  .hc-no{
+    width:38px;height:38px;flex:none;border-radius:50%;display:grid;place-items:center;
+    background:linear-gradient(150deg,#7c5cd6,#5b3fa8);color:#fff;font-size:16px;font-weight:700;
+  }
+  .hc-tt{flex:1;min-width:0;}
+  .hc-name{font-size:15.5px;font-weight:700;}
+  .hc-kw{font-size:12.2px;color:var(--muted);margin-top:1px;}
+  .hc-star{
+    flex:none;font-size:11.5px;font-weight:700;color:#fff;background:#c2410c;
+    padding:3px 9px;border-radius:20px;letter-spacing:.3px;
+  }
+  .hc-row{display:flex;gap:10px;padding:5px 0;font-size:13.8px;}
+  .hc-lb{flex:none;width:76px;color:var(--pp);font-weight:700;font-size:12.8px;padding-top:1px;}
+  .hc-vl{flex:1;min-width:0;color:var(--ink2);}
+  .hc-row.cau .hc-lb{color:var(--warn);}
+  .hc-row.cau .hc-vl{color:#8a4b28;}
+  .nds{display:flex;flex-wrap:wrap;gap:5px;}
+  .nd{
+    font-size:12.2px;background:var(--pp-soft);color:var(--pp);
+    padding:2px 9px;border-radius:20px;border:1px solid var(--pp-line);
+  }
+  .foot{text-align:center;font-size:12px;color:var(--muted);margin-top:26px;}
+  @media print{
+    body{background:#fff;font-size:11.5px;}
+    .wrap{max-width:100%;padding:0;}
+    .hc{border-color:#ccc;margin-bottom:9px;padding:10px 12px;}
+    .top{padding:6px 0 12px;margin-bottom:14px;}
+    .top h1{font-size:18px;}
+    .howto{font-size:11px;padding:10px 12px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>🏛 客户星盘速查表</h1>
+    <div class="sub">十二宫 × 保险需求 · 主人专属谈客工具 ｜ 生成于 2026-09-12</div>
+  </div>
+
+  <div class="howto">
+    <b>怎么用：读懂一张盘只需四步</b>
+    <ol>
+      <li><b>第 1 宫（上升）</b>——定沟通姿态：你该用什么语气、什么节奏开场。</li>
+      <li><b>第 2 宫 + 第 8 宫</b>——定钱：他能承受多少保费（2 宫）、需要多厚的保障（8 宫）。</li>
+      <li><b>第 4 宫 + 第 6 宫</b>——定产品：家庭保障（4 宫）还是健康医疗（6 宫）。</li>
+      <li><b>第 7 / 10 / 11 宫</b>——定维护：客户关系（7）、事业周期（10）、转介绍（11）。</li>
+    </ol>
+    <div style="margin-top:9px">⚠️ 星盘是<b>理解客户的辅助视角</b>，用于找对沟通方式与切入角度；<b>不构成销售依据，也不替代需求分析</b>。涉及健康告知、财务状况等关键信息，仍须以客户本人陈述与书面材料为准。</div>
+  </div>
+
+
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">1</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 1 宫 · 命宫</div>
+        <div class="hc-kw">自我 · 气质 · 第一印象 · 体质</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">看上升星座（宫头）：客户走进来给人的第一印象与气质类型。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">沟通姿态定位</span><span class="nd">体质与养老倾向</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">火象上升→干脆、先给结论；土象→先讲规则与安全性、给他材料自己看；风象→多给对比让他自己算；水象→先建情绪安全感再谈钱。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">上升不等于太阳。别把上升当天生性格讲，客户会觉得你说得不准，信任一下子就没了。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">2</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 2 宫 · 财帛宫</div>
+        <div class="hc-kw">收入 · 花钱方式 · 价值感 · 谋生能力</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">他怎么赚钱、怎么花钱、对价格的敏感度和犹豫点在哪里。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">保费预算</span><span class="nd">缴费期设计</span><span class="nd">价值感</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">土星/处女特质→给性价比与确定性；木星/射手特质→用「强制储蓄」框架讲；现金流波动大→建议短缴或趸交，别推长缴。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">二宫里「我不配」型的客户，你越推高端他越退。把价值从他自己转到家人身上再讲。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">3</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 3 宫 · 兄弟宫</div>
+        <div class="hc-kw">表达方式 · 信息获取 · 手足 · 邻里</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">他说话的方式、接收信息的偏好、追问到什么颗粒度。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">沟通打法</span><span class="nd">手足共同赡养</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">水星型→发资料、给对比表，让他自己算，别替他下结论；土星型→书面材料逐条解释；火星型→直接给结论，别绕。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">海王三宫必须白纸黑字确认，口头约定他真会记错，后续最容易起纠纷。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">4</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 4 宫 · 家庭宫</div>
+        <div class="hc-kw">家庭 · 根源 · 内在安全感 · 房产</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">家庭在他心里的分量，以及他是不是那个一直在承担赡养责任的人。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">家庭保障</span><span class="nd">重疾与寿险</span><span class="nd">房产传承</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">土星四宫→直说「你一直在照顾别人，谁来照顾你」；月亮/巨蟹→「给家人留一份确定性」即可，几乎不用铺垫。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">冥王或火星四宫的家庭关系常有隐痛，不要贸然追问家庭细节，先保持安全距离。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">5</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 5 宫 · 子女宫</div>
+        <div class="hc-kw">孩子 · 创造 · 快乐 · 风险偏好</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">他对孩子的投入程度，以及他的投机倾向（决定接受储蓄型还是浮动型）。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">教育金</span><span class="nd">创业风险</span><span class="nd">浮动型产品适配</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">太阳/木星/狮子五宫→教育金几乎不用说服，他自己已经在想，你只需把时间轴和金额算清楚。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">木星或射手五宫容易高估收益，演示利率的不确定性必须讲透，否则后期预期落差会反噬信任。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">6</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 6 宫 · 奴仆宫</div>
+        <div class="hc-kw">日常劳作 · 身体健康 · 服务 · 下属同事</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">工作强度、日常作息、对自身健康的关注程度。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">百万医疗</span><span class="nd">重疾</span><span class="nd">员工团体险</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">火星/土星六宫→用「你这么拼，得给自己兜个底」，切忌暗示他有病。海王六宫→讲增值服务（绿通、陪诊）比讲保额有效。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">六宫空宫的客户对健康风险感知迟钝，要用具体场景和数字唤醒，别讲抽象概率。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">7</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 7 宫 · 夫妻宫</div>
+        <div class="hc-kw">婚姻 · 合伙 · 客户关系 · 公开对手</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">他怎么建立关系、怎么对待承诺、客户黏性有多高。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">客户维护</span><span class="nd">婚姻财产</span><span class="nd">资产隔离</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">土星七宫→前期慢、后期极稳，值得多花时间，长期价值最高；天王七宫→把服务关系机构化，绑定公司而非个人。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">金星/天秤型常因不好意思拒绝而签，务必把条款讲透；靠人情成交的单，退保率也高。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">8</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 8 宫 · 疾厄宫</div>
+        <div class="hc-kw">保险 · 遗产 · 税务 · 他人资源 · 生死</div>
+      </div>
+      <div class="hc-star">保险本宫</div>
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">对风险的敏感度，以及他对「别人的钱」（理赔、遗产、共同财产）的态度。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">保额厚度</span><span class="nd">遗产传承</span><span class="nd">税务筹划</span><span class="nd">理赔纠纷预防</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">冥王/天蝎→他早想过最坏情况，不必吓他，给足保障厚度；土星→讲条款、免责、理赔流程，讲收益没用；木星→用具体案例和概率让他看见。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">海王八宫财务边界模糊，投保时健康告知逐项确认，别留模糊地带——这是理赔纠纷的温床。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">9</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 9 宫 · 迁移宫</div>
+        <div class="hc-kw">远方 · 学问 · 信仰 · 法律与出版</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">有没有留学、海外、跨境规划；做决定是看数字还是看意义。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">留学教育金</span><span class="nd">境外保障</span><span class="nd">跨境保单效力</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">木星/射手九宫→子女出国概率高，外币资产、留学期间医疗与意外险都是真实需求，金额通常不小。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">跨境涉及税务居民身份、受益人安排、保单法律效力，技术点必须讲清，含糊会出大事。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">10</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 10 宫 · 官禄宫</div>
+        <div class="hc-kw">事业 · 社会地位 · 成就 · 公众形象</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">事业处在哪个阶段、野心量级、公众形象与企业规模。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">定期寿险</span><span class="nd">养老规划</span><span class="nd">家企隔离</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">上升期→高保额定期寿险，覆盖责任最重那几年（便宜、杠杆高）；成熟期→养老与传承；冥王十宫→预留减额缴清空间，防中断。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">企业主普遍对家企隔离敏感，「生意出事家庭不受牵连」的说服力往往超过任何收益演示。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">11</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 11 宫 · 福德宫</div>
+        <div class="hc-kw">人脉 · 贵人 · 社群 · 理想</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">圈子大小、是不是节点人物、对未来是否乐观。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">转介绍</span><span class="nd">圈层经营</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">木星/天王十一宫→本身就是圈子节点，服务好一个能带来一串，值得投入额外维护成本；土星→介绍少但质量极高。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">十一宫受克者对未来悲观、觉得规划没用。别画大饼，拆成小步、给可验证的阶段性结果。</div></div>
+  </section>
+  <section class="hc">
+    <div class="hc-hd">
+      <div class="hc-no">12</div>
+      <div class="hc-tt">
+        <div class="hc-name">第 12 宫 · 玄秘宫</div>
+        <div class="hc-kw">隐藏 · 孤独 · 修行 · 幕后 · 消解</div>
+      </div>
+      
+    </div>
+    <div class="hc-row"><div class="hc-lb">🔍 怎么识别</div><div class="hc-vl">他不愿主动说出口的部分：财务边界是否清晰、有没有隐忧。</div></div>
+    <div class="hc-row"><div class="hc-lb">📋 保险需求</div><div class="hc-vl"><div class="nds"><span class="nd">健康告知</span><span class="nd">隐性风险</span><span class="nd">养老社区与护理</span></div></div></div>
+    <div class="hc-row"><div class="hc-lb">💬 怎么开口</div><div class="hc-vl">主动替他说出顾虑——「您是不是担心……」，他没问不代表不担心，你先开口，信任立刻建立。</div></div>
+    <div class="hc-row cau"><div class="hc-lb">⚠️ 避坑</div><div class="hc-vl">涉及既往病史、担保、亲友借贷这类隐秘信息，态度要温和但必须问到底。问不出来的信息就是将来的纠纷。</div></div>
+  </section>
+
+  <div class="foot">🐾 咪的仆人出品 ｜ 每日必看面板配套工具 ｜ 内容随十二宫课程同步更新</div>
+</div>
+</body>
+</html>
