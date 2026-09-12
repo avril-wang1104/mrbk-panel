@@ -285,6 +285,24 @@ a:hover{text-decoration:underline;}
   font-size:13.5px;color:#8a4b34;border-left:3px solid var(--warm);
 }
 
+/* ---- 好书快读 · 与日报同步版 ---- */
+.book-why{
+  margin-top:10px;padding:11px 13px;border-radius:11px;
+  background:var(--gold-soft);border:1px solid #f3e3bd;
+  font-size:13.6px;color:#6d5310;line-height:1.78;
+}
+.book-verdict{
+  margin-top:12px;padding:11px 13px;border-radius:11px;
+  background:#f6f7f9;border:1px solid #e6e9ee;
+  font-size:13.6px;color:var(--ink2);line-height:1.78;
+}
+.book-cta{
+  display:block;margin-top:13px;padding:12px 14px;border-radius:12px;text-align:center;
+  background:linear-gradient(135deg,var(--gold) 0%,#d98a0b 100%);
+  color:#fff;font-size:14.5px;font-weight:700;text-decoration:none;letter-spacing:.3px;
+}
+.book-cta:active{opacity:.85;}
+
 /* ---- 今日星盘 ---- */
 .astro-top{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
 .astro-chart{flex:0 0 240px;max-width:240px;}

@@ -138,6 +138,27 @@
     return o;
   }
 
+  /* 当天「每日好书快读」日报同步过来的书（与专门的每日好书快读同一本） */
+  function renderTodayBook(b) {
+    var o = "<div class=\"book-head\">" +
+        "<div class=\"book-cover\">" + esc(b.tag || "书") + "</div>" +
+        "<div style=\"flex:1;min-width:0\">" +
+          "<div class=\"book-no\">" + (b.no ? "第 " + esc(b.no) + " 期 · " : "") + "每日好书快读</div>" +
+          "<div class=\"book-title\">" + esc(b.title) + "</div>" +
+          "<div class=\"book-author\">" + esc(b.author || "") + "</div>" +
+        "</div></div>";
+    if (b.pub) o += "<div class=\"book-chapters\">" + esc(b.pub) + "</div>";
+    if (b.why) o += "<div class=\"book-why\">🐾 <b>为什么今天读它：</b>" + esc(b.why) + "</div>";
+    o += lf(b);
+    if (b.verdict) o += "<div class=\"book-verdict\">📌 <b>要不要买原书：</b>" + esc(b.verdict) + "</div>";
+    if (b.url) {
+      o += "<a class=\"book-cta\" href=\"" + esc(b.url) + "\" target=\"_blank\" rel=\"noopener\">" +
+           "读全文（约 60 分钟读完） →</a>";
+    }
+    o += "<div class=\"src-note\">与「每日好书快读」日报同步，每天只需读这一本。</div>";
+    return o;
+  }
+
   /* ---------- 内容更新机制 ----------
      手机装到桌面后没有地址栏、没有刷新按钮，iOS 还会直接恢复内存快照，
      所以必须主动去服务器比对日期索引，发现新一期就拉下来。 */
@@ -310,10 +331,14 @@
       id: "book", cls: "col-4 c-gold", icon: "📚", title: "每日好书快读",
       auto: true,
       render: function (d, D) {
+        /* 优先用当天同步过来的「每日好书快读」日报内容（data/<日期>.js 的 book 字段），
+           与专门的每日好书快读保持同一本书；取不到才回退到固定内容池序列。 */
+        var b = D.book;
+        if (b && b.title) return renderTodayBook(b);
+
         var it = pickSeq("book", d);
         if (!it) return "<div class=\"empty\">内容池为空</div>";
         var total = (POOL.book || []).length;
-        var round = (it.no || 1) + " / " + total;
         return "<div class=\"book-head\">" +
             "<div class=\"book-cover\">" + esc(it.tag || "书") + "</div>" +
             "<div style=\"flex:1;min-width:0\">" +
