@@ -173,8 +173,11 @@
            "<div>" + esc(h.insurance) + "</div></div>";
     }
     if (h.bestline) o += "<div class=\"bestline\">“" + esc(h.bestline) + "”</div>";
-    o += "<a class=\"house-cta\" href=\"house-cheatsheet.html\" target=\"_blank\" rel=\"noopener\">" +
-         "打开「客户星盘速查表」→</a>";
+    /* 速查表是独立页面，离线单文件版里没有，故离线版不显示这个入口 */
+    if (!window.__MOBILE_PACKED__) {
+      o += "<a class=\"house-cta\" href=\"house-cheatsheet.html\" target=\"_blank\" rel=\"noopener\">" +
+           "打开「客户星盘速查表」→</a>";
+    }
     o += "<div class=\"src-note\">12 天走完十二宫，每天积累一块，读完整张盘。</div>";
     return o;
   }
