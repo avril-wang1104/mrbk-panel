@@ -285,6 +285,30 @@ a:hover{text-decoration:underline;}
   font-size:13.5px;color:#8a4b34;border-left:3px solid var(--warm);
 }
 
+/* ---- 星盘宫位课 ---- */
+.house-head{display:flex;gap:12px;align-items:center;margin-bottom:10px;}
+.house-no{
+  width:46px;height:46px;flex:none;border-radius:50%;
+  display:grid;place-items:center;
+  background:linear-gradient(150deg,#7c5cd6 0%,#5b3fa8 100%);
+  color:#fff;font-size:19px;font-weight:700;
+}
+.house-name{font-size:16.5px;font-weight:700;}
+.house-alias{font-size:12.2px;color:var(--muted);margin-top:2px;}
+.hs-h{
+  font-size:13.8px;font-weight:700;color:var(--ink);margin:13px 0 5px;
+  padding-left:9px;border-left:3px solid #7c5cd6;
+}
+.hs-ul{margin:6px 0 0;padding-left:18px;}
+.hs-ul li{font-size:13.8px;color:var(--ink2);margin:6px 0;line-height:1.75;}
+.hs-ul li b{color:var(--ink);}
+.hs-ins{
+  margin-top:13px;padding:12px 14px;border-radius:12px;
+  background:#f5f1fd;border:1px solid #e4daf7;
+  font-size:13.8px;color:#4a3a72;line-height:1.82;
+}
+.hs-ins-t{font-weight:700;color:#5b3fa8;margin-bottom:5px;}
+
 /* ---- 好书快读 · 与日报同步版 ---- */
 .book-why{
   margin-top:10px;padding:11px 13px;border-radius:11px;

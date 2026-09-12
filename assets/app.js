@@ -46,6 +46,14 @@
     var i = dayIndex(iso) - dayIndex(SEQ_ANCHOR);
     return arr[((i % arr.length) + arr.length) % arr.length];
   }
+  /* 星盘宫位课：12 天走完一轮，锚定第 1 宫对应 2026-09-12 */
+  var HOUSE_ANCHOR = "2026-09-12";
+  function pickHouse(iso) {
+    var arr = POOL.house || [];
+    if (!arr.length) return null;
+    var i = dayIndex(iso) - dayIndex(HOUSE_ANCHOR);
+    return arr[((i % arr.length) + arr.length) % arr.length];
+  }
   function tomorrowHint(name, iso) {
     var arr = POOL[name] || [];
     if (!arr.length) return null;
@@ -135,6 +143,37 @@
     }
     if (it.bestline) o += "<div class=\"bestline\">“" + esc(it.bestline) + "”</div>";
     if (it.action) o += "<div class=\"takeaway\">🎯 " + esc(it.action) + "</div>";
+    return o;
+  }
+
+  /* 星盘宫位课：每天一宫，12 天走完一轮，逐块积累到能独立读盘、用于客户沟通 */
+  function renderHouse(h) {
+    var o = "<div class=\"house-head\">" +
+        "<div class=\"house-no\">" + esc(h.no) + "</div>" +
+        "<div style=\"flex:1;min-width:0\">" +
+          "<div class=\"house-name\">第 " + esc(h.no) + " 宫 · " + esc(h.name) + "</div>" +
+          "<div class=\"house-alias\">" + esc(h.alias || "") + "</div>" +
+        "</div></div>";
+    if (h.keyword) {
+      o += "<div class=\"chips\">" + String(h.keyword).split(" · ").map(function (k) {
+        return "<span class=\"chip\">" + esc(k) + "</span>";
+      }).join("") + "</div>";
+    }
+    if (h.domain) o += "<div class=\"hs-h\">一、主管领域</div><p class=\"lf-p\">" + esc(h.domain) + "</p>";
+    if (h.cusp) o += "<div class=\"hs-h\">二、宫头星座怎么看</div><p class=\"lf-p\">" + esc(h.cusp) + "</p>";
+    if ((h.planets || []).length) {
+      o += "<div class=\"hs-h\">三、行星落入速查</div><ul class=\"hs-ul\">" +
+        h.planets.map(function (p) {
+          return "<li><b>" + esc(p.p) + "</b>：" + esc(p.t) + "</li>";
+        }).join("") + "</ul>";
+    }
+    if (h.empty) o += "<div class=\"hs-h\">四、空宫怎么办</div><p class=\"lf-p\">" + esc(h.empty) + "</p>";
+    if (h.insurance) {
+      o += "<div class=\"hs-ins\"><div class=\"hs-ins-t\">💼 保险客户场景</div>" +
+           "<div>" + esc(h.insurance) + "</div></div>";
+    }
+    if (h.bestline) o += "<div class=\"bestline\">“" + esc(h.bestline) + "”</div>";
+    o += "<div class=\"src-note\">12 天走完十二宫，每天积累一块，读完整张盘。</div>";
     return o;
   }
 
@@ -356,6 +395,16 @@
       render: function (d, D) {
         if (window.__renderAstro) return window.__renderAstro(d);
         return "<div class=\"empty\">星盘模块未加载（缺少 assets/astro.js）</div>";
+      }
+    },
+
+    {
+      id: "house", cls: "col-12 c-purple", icon: "🏛", title: "星盘宫位课 · 每日一宫",
+      auto: true,
+      render: function (d, D) {
+        var h = pickHouse(d);
+        if (!h) return "<div class=\"empty\">宫位内容池未加载（缺少 assets/pool_house.js）</div>";
+        return renderHouse(h);
       }
     },
 
