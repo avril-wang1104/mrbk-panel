@@ -182,8 +182,122 @@
     return o;
   }
 
-  /* 当天「每日好书快读」日报同步过来的书（与专门的每日好书快读同一本） */
+  /* 允许在文案里用 **重点** 标记加粗 */
+  function md(s) {
+    return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  }
+
+  /* ---------- 每日深度好文（新形态）----------
+     结构：封面 → 为什么今天读 → 导语 → 核心论点 → 分节论证（含管理启示/金句）
+           → 时间线 → 要点小结表 → 落地动作 → 金句 → 参考资料
+     题材不限：书籍 / 深度评论 / 人物案例 / 商业事件 */
+  function renderDeepRead(b) {
+    var o = "";
+
+    /* 封面 */
+    o += "<div class=\"dz-cover\">" +
+      "<div class=\"dz-chips\">" +
+        (b.kind ? "<span class=\"dz-kind\">" + esc(b.kind) + "</span>" : "") +
+        (b.tag ? "<span class=\"dz-tag\">" + esc(b.tag) + "</span>" : "") +
+        (b.no ? "<span class=\"dz-no\">第 " + esc(b.no) + " 期</span>" : "") +
+      "</div>" +
+      "<div class=\"dz-title\">" + esc(b.title) + "</div>" +
+      (b.subtitle ? "<div class=\"dz-sub\">" + esc(b.subtitle) + "</div>" : "") +
+      (b.source ? "<div class=\"dz-meta\">" + esc(b.source) + "</div>" : "") +
+    "</div>";
+
+    if (b.why) o += "<div class=\"dz-why\">🐾 <b>为什么今天读它：</b>" + md(b.why) + "</div>";
+
+    /* 导语 */
+    var lead = b.lead || {};
+    var leadPs = lead.ps || (lead.t ? [lead.t] : []);
+    if (b.leadText) leadPs = [b.leadText];
+    if (leadPs.length) {
+      o += "<div class=\"dz-sec\">" +
+        (lead.h ? "<div class=\"dz-h2\">" + esc(lead.h) + "</div>" : "") +
+        leadPs.map(function (p) { return "<p class=\"dz-p\">" + md(p) + "</p>"; }).join("") +
+      "</div>";
+    }
+
+    /* 核心论点 */
+    var core = b.core || {};
+    var cps = core.ps || core.points || [];
+    if (cps.length) {
+      o += "<div class=\"dz-core\">" +
+        (core.t ? "<div class=\"dz-core-t\">" + esc(core.t) + "</div>" : "") +
+        "<ul class=\"dz-core-ul\">" + cps.map(function (p) {
+          if (typeof p === "string") return "<li>" + md(p) + "</li>";
+          return "<li><b>" + esc(p.k || "") + "</b>" + (p.v ? "——" + md(p.v) : "") + "</li>";
+        }).join("") + "</ul></div>";
+    }
+
+    /* 分节论证 */
+    (b.sections || []).forEach(function (s) {
+      var ps = s.ps || (s.p ? [s.p] : []);
+      o += "<div class=\"dz-sec\">" +
+        "<div class=\"dz-h2\">" + esc(s.h) + "</div>" +
+        ps.map(function (p) { return "<p class=\"dz-p\">" + md(p) + "</p>"; }).join("");
+      if (s.ins) {
+        o += "<div class=\"dz-ins\"><span class=\"dz-ins-l\">" +
+          esc(s.ins.label || "管理启示") + "</span>" + md(s.ins.text) + "</div>";
+      }
+      if (s.q) {
+        o += "<div class=\"dz-quote\">" + esc(s.q.t || s.q) +
+          (s.q.by ? "<span class=\"dz-q-by\">—— " + esc(s.q.by) + "</span>" : "") + "</div>";
+      }
+      o += "</div>";
+    });
+
+    /* 时间线 */
+    if ((b.timeline || []).length) {
+      o += "<div class=\"dz-sec\"><div class=\"dz-h2\">" + esc(b.timelineTitle || "关键节点时间线") + "</div>" +
+        "<div class=\"dz-tl\">" + b.timeline.map(function (t) {
+          return "<div class=\"dz-tl-i\"><div class=\"dz-tl-d\">" + esc(t.d) + "</div>" +
+            "<div class=\"dz-tl-x\">" + md(t.t) + "</div></div>";
+        }).join("") + "</div></div>";
+    }
+
+    /* 要点小结表 */
+    var tb = b.table || null;
+    if (tb && (tb.rows || []).length) {
+      o += "<div class=\"dz-sec\"><div class=\"dz-h2\">" + esc(tb.t || "全篇要点小结") + "</div>" +
+        "<div class=\"dz-tw\"><table class=\"dz-table\"><tr>" +
+        (tb.cols || []).map(function (c) { return "<th>" + esc(c) + "</th>"; }).join("") +
+        "</tr>" + tb.rows.map(function (r) {
+          return "<tr>" + r.map(function (c) { return "<td>" + md(c) + "</td>"; }).join("") + "</tr>";
+        }).join("") + "</table></div></div>";
+    }
+
+    /* 落地动作 */
+    if (b.action) {
+      o += "<div class=\"dz-act\"><span class=\"dz-act-l\">今日落地动作</span>" + md(b.action) + "</div>";
+    }
+    /* 金句 */
+    if (b.bestline) o += "<div class=\"dz-best\">“" + esc(b.bestline) + "”</div>";
+    /* 参考来源 */
+    if ((b.refs || []).length) {
+      o += "<div class=\"dz-sec\"><div class=\"dz-h2\">参考资料</div><div class=\"dz-refs\"><ol>" +
+        b.refs.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ol></div></div>";
+    }
+    if (b.url) {
+      o += "<a class=\"dz-cta\" href=\"" + esc(b.url) + "\" target=\"_blank\" rel=\"noopener\">" +
+        "读完整版（约 30 分钟） →</a>";
+    }
+    o += "<div class=\"src-note\">每日深度好文 · 一天一篇，题材含书籍 / 评论 / 人物 / 案例</div>";
+    return o;
+  }
+
+  /* 判断当天内容是「新形态深度好文」还是「旧形态丛书摘要」 */
+  function isDeepRead(b) {
+    if (!b) return false;
+    if (b.core || b.timeline || b.table || b.kind || b.subtitle) return true;
+    var s = (b.sections || [])[0];
+    return !!(s && (s.ps || s.ins || s.q));
+  }
+
+  /* 当天「每日深度好文/好书快读」同步过来的内容（与专门的日报同一篇） */
   function renderTodayBook(b) {
+    if (isDeepRead(b)) return renderDeepRead(b);
     var o = "<div class=\"book-head\">" +
         "<div class=\"book-cover\">" + esc(b.tag || "书") + "</div>" +
         "<div style=\"flex:1;min-width:0\">" +
@@ -372,11 +486,11 @@
     },
 
     {
-      id: "book", cls: "col-4 c-gold", icon: "📚", title: "每日好书快读",
+      id: "book", cls: "col-4 c-gold", icon: "📖", title: "每日深度好文",
       auto: true,
       render: function (d, D) {
-        /* 优先用当天同步过来的「每日好书快读」日报内容（data/<日期>.js 的 book 字段），
-           与专门的每日好书快读保持同一本书；取不到才回退到固定内容池序列。 */
+        /* 优先用当天同步过来的「每日深度好文」内容（data/<日期>.js 的 book 字段），
+           与专门的日报保持同一篇；取不到才回退到固定内容池序列。 */
         var b = D.book;
         if (b && b.title) return renderTodayBook(b);
 

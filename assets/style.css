@@ -409,6 +409,104 @@ body:not(.editmode) .addrow,body:not(.editmode) .delbtn{display:none;}
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
+/* ================= 每日深度好文（封面+分节论证+管理启示+时间线+小结表） ================= */
+.dz-cover{
+  background:linear-gradient(135deg,#b8860b 0%,#8a5a12 100%);
+  border-radius:14px;padding:22px 20px 18px;color:#fff;margin-bottom:14px;
+}
+.dz-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.dz-kind,.dz-tag,.dz-no{
+  font-size:11.5px;padding:3px 10px;border-radius:20px;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.34);
+  letter-spacing:.4px;
+}
+.dz-no{background:rgba(255,255,255,.92);color:#8a5a12;font-weight:700;border-color:transparent;}
+.dz-title{font-size:21px;font-weight:700;line-height:1.45;letter-spacing:.3px;}
+.dz-sub{font-size:13.8px;line-height:1.8;margin-top:10px;opacity:.94;}
+.dz-meta{
+  font-size:11.8px;margin-top:14px;padding-top:10px;opacity:.78;
+  border-top:1px solid rgba(255,255,255,.26);line-height:1.7;
+}
+.dz-why{
+  margin-bottom:14px;padding:12px 14px;border-radius:12px;
+  background:var(--gold-soft);border:1px solid #f0e2bd;
+  font-size:14px;color:#6d5310;line-height:1.85;
+}
+.dz-sec{margin-bottom:16px;}
+.dz-h2{
+  font-size:16.5px;font-weight:700;color:#7a5a10;margin-bottom:10px;
+  padding-bottom:8px;border-bottom:2px solid #f0e6cf;letter-spacing:.3px;
+}
+.dz-p{font-size:15px;line-height:1.95;color:var(--ink2);margin-bottom:9px;}
+.dz-p strong,.dz-why strong,.dz-core strong,.dz-ins strong{color:#7a5a10;font-weight:700;}
+.dz-core{
+  background:linear-gradient(135deg,#fdf7e8 0%,#faf1dd 100%);
+  border-left:4px solid var(--gold);border-radius:0 12px 12px 0;
+  padding:14px 16px;margin-bottom:16px;
+}
+.dz-core-t{font-size:15.5px;font-weight:700;color:#7a5a10;margin-bottom:8px;}
+.dz-core-ul{list-style:none;}
+.dz-core-ul li{
+  position:relative;padding:5px 0 5px 20px;font-size:14.5px;line-height:1.85;color:var(--ink2);
+}
+.dz-core-ul li::before{
+  content:"◆";position:absolute;left:2px;top:9px;font-size:9px;color:var(--gold);
+}
+.dz-ins{
+  margin:10px 0;padding:12px 14px;border-radius:0 10px 10px 0;
+  background:#fbf9f4;border-left:3px solid #c9a227;
+  font-size:14.2px;line-height:1.9;color:#4a4034;
+}
+.dz-ins-l{
+  display:inline-block;font-size:11px;font-weight:700;color:#8a5a12;
+  letter-spacing:1px;margin-right:8px;
+}
+.dz-quote{
+  margin:10px 0;padding:12px 14px;border-radius:10px;background:#f6f2e8;
+  font-size:14.5px;line-height:1.9;color:#4a4034;
+}
+.dz-q-by{display:block;text-align:right;font-size:12.5px;color:var(--muted);margin-top:6px;}
+.dz-tl{margin-top:4px;}
+.dz-tl-i{position:relative;padding:0 0 15px 18px;border-left:2px solid #ece2cb;}
+.dz-tl-i:last-child{padding-bottom:2px;border-left-color:transparent;}
+.dz-tl-i::before{
+  content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;
+  background:var(--gold);border:2px solid #fff;box-shadow:0 0 0 2px #ece2cb;
+}
+.dz-tl-d{font-size:13px;font-weight:700;color:#8a5a12;margin-bottom:2px;}
+.dz-tl-x{font-size:14.2px;line-height:1.85;color:var(--ink2);}
+.dz-tw{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.dz-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:460px;}
+.dz-table th{
+  background:#f6efdd;color:#7a5a10;font-weight:700;padding:9px 10px;text-align:left;
+  border:1px solid #ece2cb;white-space:nowrap;
+}
+.dz-table td{
+  padding:9px 10px;border:1px solid #f0e6cf;color:var(--ink2);line-height:1.8;vertical-align:top;
+}
+.dz-table tr:nth-child(even) td{background:#fcfaf5;}
+.dz-act{
+  margin:14px 0;padding:13px 15px;border-radius:12px;
+  background:var(--accent-soft);border:1px solid #cfe8dd;
+  font-size:14.5px;line-height:1.9;color:#0f5e45;
+}
+.dz-act-l{
+  display:block;font-size:11.5px;font-weight:700;color:var(--accent);
+  letter-spacing:1px;margin-bottom:6px;
+}
+.dz-best{
+  margin:14px 0;padding:14px 16px;border-radius:12px;background:#f7f6f2;
+  border-left:3px solid var(--warm);font-size:16px;line-height:1.9;color:var(--ink);
+}
+.dz-refs{font-size:12.5px;color:var(--muted);line-height:1.95;}
+.dz-refs ol{padding-left:18px;}
+.dz-cta{
+  display:block;margin-top:14px;padding:12px 14px;border-radius:12px;text-align:center;
+  background:linear-gradient(135deg,var(--gold) 0%,#d98a0b 100%);
+  color:#fff;font-size:14.5px;font-weight:700;letter-spacing:.3px;
+}
+.dz-cta:active{opacity:.85;}
+
 @media print{
   .topbar,.footer,.addrow,.delbtn,.toast{display:none !important;}
   body{background:#fff;}
