@@ -1,7 +1,7 @@
 {
   "name": "每日必看 · 主人专属面板",
   "short_name": "每日必看",
-  "description": "每日早报、健康日报、营养知识、好书快读，一屏看完",
+  "description": "每日早报、健康日报、营养知识、每日深度好文，一屏看完",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

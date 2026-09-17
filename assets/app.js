@@ -301,7 +301,7 @@
     var o = "<div class=\"book-head\">" +
         "<div class=\"book-cover\">" + esc(b.tag || "书") + "</div>" +
         "<div style=\"flex:1;min-width:0\">" +
-          "<div class=\"book-no\">" + (b.no ? "第 " + esc(b.no) + " 期 · " : "") + "每日好书快读</div>" +
+          "<div class=\"book-no\">" + (b.no ? "第 " + esc(b.no) + " 期 · " : "") + "每日深度好文</div>" +
           "<div class=\"book-title\">" + esc(b.title) + "</div>" +
           "<div class=\"book-author\">" + esc(b.author || "") + "</div>" +
         "</div></div>";
@@ -313,7 +313,7 @@
       o += "<a class=\"book-cta\" href=\"" + esc(b.url) + "\" target=\"_blank\" rel=\"noopener\">" +
            "读全文（约 60 分钟读完） →</a>";
     }
-    o += "<div class=\"src-note\">与「每日好书快读」日报同步，每天只需读这一本。</div>";
+    o += "<div class=\"src-note\">与「每日深度好文」日报同步，每天只需读这一篇。</div>";
     return o;
   }
 
